@@ -1,0 +1,30 @@
+	private void countNoOfOccurrencesOfEachChar( ) {
+		HashMap<Character, Integer> countMap = new HashMap<>();
+		
+		System.out.println("Enter a string: ");
+		
+		String inputString = scan.nextLine();
+		
+		System.out.println("Check case ? (TRUE/FALSE): ");
+		Boolean checkStringCase = scan.nextBoolean();
+		if( checkStringCase.equals(Boolean.FALSE ))
+		{
+			inputString = inputString.toLowerCase();
+		}
+		
+		for ( int i = 0; i< inputString.length(); i++ )
+		{
+			Character currentChar = inputString.charAt(i);
+
+			if (!countMap.containsKey(currentChar) && currentChar != ' ')
+			{
+				countMap.put(currentChar, 1);
+			}
+			else if (countMap.containsKey(currentChar)) 
+			{
+				countMap.put(currentChar, countMap.get(currentChar) + 1);
+			}
+		}
+		System.out.println(" Final Count :  " + countMap );
+	}
+	
